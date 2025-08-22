@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Josh Le Grice — Data Science Portfolio</title>
+  <meta name="description" content="Projects and skills by Josh Le Grice — data science & machine learning portfolio." />
+  <meta name="author" content="Josh Le Grice" />
+
+  <!-- Open Graph for rich previews -->
+  <meta property="og:title" content="Josh Le Grice — Data Science Portfolio" />
+  <meta property="og:description" content="Projects and skills by Josh Le Grice — data science & machine learning portfolio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://example.com/preview.png" />
+
+  <!-- Favicon (replace with your own) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'></text></svg>">
+
+  <!-- Minimal, modern CSS (no framework) -->
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --card: #111418;
+      --text: #e9eef2;
+      --muted: #aab6c1;
+      --accent: #5353ff;
+      --accent-2: #5353ff;
+      --ring: rgba(79, 140, 255, 0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fb; --card:#ffffff; --text:#0f1720; --muted:#334155; --shadow: 0 10px 30px rgba(2,6,23,.06);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: var(--sans); color: var(--text); background: radial-gradient(1200px 600px at 90% -10%, rgba(79,140,255,.12), transparent), radial-gradient(800px 400px at -10% 10%, rgba(155,140,255,.12), transparent), var(--bg); }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+
+    header { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; margin: 12px 0 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .logo { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; font-weight: 700; box-shadow: var(--shadow); }
+    nav a { margin-left: 16px; font-weight: 600; color: var(--text); opacity: .85; }
+    nav a:hover { opacity: 1; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center; margin-top: 12px; }
+    .hero-card { background: var(--card); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.06); }
+    h1 { font-size: clamp(26px, 5vw, 40px); margin: 0 0 10px; letter-spacing: .2px; }
+    .sub { color: var(--muted); margin: 0; line-height: 1.6; }
+    .cta { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color: var(--text); font-weight: 600; box-shadow: var(--shadow); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); border: none; }
+
+    .statbar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 12px; }
+    .stat { background: var(--card); padding: 14px 16px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,.06); }
+    .stat .k { font-weight: 800; font-family: var(--mono); font-size: 18px; }
+    .stat .t { color: var(--muted); font-size: 12px; }
+
+    section { margin-top: 40px; }
+    .section-title { display:flex; justify-content:space-between; align-items:end; margin: 4px 6px 14px; }
+    .section-title h2 { margin: 0; font-size: clamp(20px, 3.4vw, 28px); }
+    .section-title .muted { color: var(--muted); font-size: 14px; }
+
+    /* Project grid */
+    .filters { display:flex; flex-wrap:wrap; gap:8px; margin: 10px 6px 14px; }
+    .chip { padding:6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.04); font-size: 13px; cursor: pointer; user-select:none; }
+    .chip.active { outline: 2px solid var(--ring); background: rgba(79,140,255,.12); }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 980px){ .hero { grid-template-columns: 1fr; } .grid{ grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } nav{ display:none; } }
+
+    .card { background: var(--card); border-radius: var(--radius); overflow: clip; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.06); display:flex; flex-direction:column; }
+    .thumb { aspect-ratio: 16/9; display:grid; place-items:center; background: linear-gradient(135deg, rgba(79,140,255,.22), rgba(155,140,255,.22)); color:#fff; font-weight:800; letter-spacing:.3px; }
+    .card-content { padding: 14px 16px 16px; display:flex; flex-direction:column; gap: 10px; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .tag { font-family: var(--mono); font-size: 12px; padding:3px 8px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); }
+
+    .card a.view { margin-top:auto; display:inline-flex; align-items:center; gap:8px; font-weight:600; }
+
+    /* Skills */
+    .skills { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
+    .skill { background: var(--card); padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.06); }
+    .skill h3 { margin: 0 0 6px; font-size: 14px; opacity:.9; }
+    .skill .items { color: var(--muted); font-size: 13px; line-height: 1.6; }
+    @media (max-width: 980px){ .skills{ grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 540px){ .skills{ grid-template-columns: 1fr; } }
+
+    /* Articles */
+    .list { display:grid; gap:10px; }
+    .list a { display:flex; justify-content:space-between; align-items:center; padding: 12px 14px; border-radius: 12px; background: var(--card); border:1px solid rgba(255,255,255,.06); }
+    .list .left { display:flex; flex-direction:column; }
+    .list .title { font-weight:600; }
+    .list .meta { color:var(--muted); font-size: 13px; }
+
+    /* Footer */
+    footer { margin-top: 48px; padding: 20px 0 10px; color: var(--muted); font-size: 14px; border-top: 1px solid rgba(255,255,255,.08); }
+    .foot { display:flex; justify-content:space-between; gap:10px; align-items:center; }
+
+    /* Utilities */
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  </style>
+
+  <!-- Schema.org JSON-LD (edit with your details) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Josh Le Grice",
+    "url": "https://your-domain.com",
+    "jobTitle": "Data Scientist",
+    "sameAs": ["https://github.com/JoshLG18", "https://www.linkedin.com/in/josh-le-grice-aa0223261/"],
+    "worksFor": {"@type":"Organization","name":"Your Org"}
+  }
+  </script>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">JLG</div>
+        <div>
+          <strong>Josh Le Grice</strong><br>
+          <span style="color:var(--muted);">Data Science • Machine Learning • Analytics</span>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="main">
+      <div class="hero-card">
+        <h1>Josh Le Grice - MSc Data Science Student at the University of Exeter.</h1>
+        <p class="sub">I am currently specialising in ML, DL and LLMs for business impact</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See projects</a>
+          <a class="btn" href="CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn" href="mailto:you@domain.com">Email me</a>
+        </div>
+        <div class="statbar" aria-label="Quick stats">
+          <div class="stat"><div class="k" id="projCount">2</div><div class="t">Projects</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2 style="margin:0 0 8px;">What I’m good at</h2>
+          <ul style="margin:0; padding-left: 18px; line-height:1.9; color:var(--muted);">
+            <li>Programming: Python (Pandas, Scikit-learn, PyTorch, TensorFlow), R, SQL</li>
+            <li>Machine learning: regression, tree-based models, deep learning, time series, NLP, LLMs</li>
+            <li>Data pipelines & tools: Spark, Databricks, Azure Cloud, GCP, Git</li>
+            <li>Data visualisation & BI: Seaborn, Matplotlib, PowerBI</li>
+          </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Featured projects</h2>
+        <span class="muted">Filter by tag</span>
+      </div>
+      <div class="filters" role="tablist" aria-label="Project filters">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="ML" role="tab">ML</button>
+        <button class="chip" data-filter="viz" role="tab">Visualisation</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <!-- Repeat cards as needed; link to repo, demo, or notebook HTML exports -->
+        <article class="card" data-tags="ML viz">
+          <div class="thumb">
+                <img src="images/credit-risk.png" alt="Credit Risk Analysis project" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-content">
+            <div>
+              <strong>Predicting Loan Defaults: A Data-Driven Approach to Credit Risk Analysis</strong>
+              <p class="sub">Developed credit risk models using real-world loan data. Explored variable distributions, multicollinearity, and causal effects. Trained and compared Logistic Regression, Random Forest, and XGBoost models.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">ML</span></div>
+            </div>
+            <a class="view" href="https://joshlg18.quarto.pub/predicting-loan-defaults-a-data-driven-approach-to-credit-risk-analysis/" target="_blank" rel="noopener">Read Report →</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="ML viz">
+          <div class="thumb">
+             <img src="images/diabetes.png" alt="Credit Risk Analysis project" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="card-content">
+            <div>
+              <strong>Which factors are the strongest predictors of diabetes, and how accurately can these predictors classify diabetes outcomes?</strong>
+              <p class="sub">I conducted a study to identify the key factors influencing diabetes diagnosis and evaluate how well different machine learning models predict diabetes outcomes.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">ML</span></div>
+            </div>
+            <a class="view" href="Coursework.pdf" target="_blank" rel="noopener">Read report →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Technical Skills</h2>
+        <span class="muted">Tools I use regularly</span>
+      </div>
+      <div class="skills">
+        <div class="skill"><h3>Languages</h3><div class="items">Python, SQL, R, Bash, Git</div></div>
+        <div class="skill"><h3>ML</h3><div class="items">scikit‑learn, XGBoost, LightGBM, PyTorch</div></div>
+        <div class="skill"><h3>Data</h3><div class="items">Pandas, Polars, Spark</div></div>
+        <div class="skill"><h3>Cloud</h3><div class="items">AWS, GCP, Azure</div></div>
+        <div class="skill"><h3>Viz</h3><div class="items">Seaborn, Matplotlib, Plotly, PowerBI</div></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="muted">Let’s work together</span>
+      </div>
+      <div class="hero-card">
+        <p style="margin:0 0 10px;">The fastest way to reach me is email. I’m open to freelance collaborations and full‑time roles.</p>
+        <ul style="margin:0; padding-left:18px; line-height:1.9;">
+          <li>Email: <a href="mailto:joshualegrice@gmail.com">JoshLeGrice</a></li>
+          <li>GitHub: <a href="https://github.com/JoshLG18" target="_blank" rel="noopener">JoshLG18</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/josh-le-grice-aa0223261/" target="_blank" rel="noopener">JoshLeGrice</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div>© <span id="year"></span> Josh Le Grice</div>
+        <div>Built with plain HTML/CSS/JS • <a href="#" id="rss">RSS</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Project tag filtering
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const grid = document.getElementById('projectGrid');
+    const cards = Array.from(grid.querySelectorAll('.card'));
+
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected','false'); });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected','true');
+      const f = chip.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const tags = card.dataset.tags.split(' ');
+        const show = (f === 'all') || tags.includes(f);
+        card.style.display = show ? 'flex' : 'none';
+        if (show) visible++;
+      });
+      document.getElementById('projCount').textContent = visible;
+    }));
+
+    // Optional: add simple analytics (e.g., Cloudflare, Plausible) by inserting their script here.
+  </script>
+</body>
+</html>
+
