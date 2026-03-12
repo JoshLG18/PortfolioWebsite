@@ -499,7 +499,6 @@
         }
       }
 
-      /* Adjusted thumb styles for consistent, uncropped sizing */
       .thumb {
         background: var(--bg2);
         display: grid;
@@ -786,7 +785,8 @@
           </div>
           <div class="statbar">
             <div class="stat">
-              <div class="k" id="projCount">9</div>
+              <div class="k" id="projCount">10</div>
+
               <div class="t">Projects</div>
             </div>
             <div class="stat">
@@ -882,6 +882,9 @@
               <span class="pill"
                 ><span class="dot proficient"></span>Financial NLP</span
               >
+              <span class="pill"
+                ><span class="dot proficient"></span>Order Book Mechanics</span
+              >
             </div>
           </div>
           <div class="skill-card">
@@ -954,11 +957,44 @@
             </button>
             <button class="chip" data-filter="viz-app">Apps &amp; Vis</button>
             <button class="chip" data-filter="research">Research</button>
+            <button class="chip" data-filter="systems">Systems</button>
+            <button class="chip" data-filter="quant">Quant</button>
           </div>
         </div>
         <div class="rule"><div class="rule-diamond"></div></div>
 
         <div class="list" id="plist">
+          <article class="item" data-tags="systems data-eng quant">
+            <div class="thumb">
+              <img src="images/LOB.png" alt="Limit Order Book" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                High-Performance Limit Order Book in C++
+              </div>
+              <p class="item-desc">
+                A matching engine built in C++20 replicating core exchange
+                infrastructure. Implements price-time priority matching, O(1)
+                order cancellation via hash-indexed lookup, and fixed-point
+                integer price representation to eliminate floating-point map key
+                errors. Includes VWAP tracking, nanosecond-resolution latency
+                measurement, and test suite covering limit orders, market
+                orders, partial fills, and cancellation.
+              </p>
+              <div class="tags">
+                <span class="tag">C++20</span>
+                <span class="tag">Matching Engine</span>
+              </div>
+              <a
+                class="view"
+                href="https://github.com/JoshLG18/LimitOrderBook"
+                target="_blank"
+                rel="noopener"
+                >GitHub →</a
+              >
+            </div>
+          </article>
+
           <article class="item featured" data-tags="featured ml-ai viz-app">
             <div class="thumb">
               <img src="images/llm.png" alt="Portfolio LLM" />
@@ -986,7 +1022,10 @@
             </div>
           </article>
 
-          <article class="item featured" data-tags="featured ml-ai research">
+          <article
+            class="item featured"
+            data-tags="featured ml-ai research quant"
+          >
             <div class="thumb">
               <img src="images/FinNews.png" alt="Sentiment Analysis" />
             </div>
@@ -1046,7 +1085,7 @@
             </div>
           </article>
 
-          <article class="item" data-tags="ml-ai viz-app">
+          <article class="item" data-tags="ml-ai viz-app quant">
             <div class="thumb">
               <img src="images/CreditCards.png" alt="Credit Risk" />
             </div>
@@ -1312,23 +1351,38 @@
       document.getElementById("year").textContent = new Date().getFullYear();
 
       const chips = [...document.querySelectorAll(".chip")];
+      const plist = document.getElementById("plist");
       const items = [...document.querySelectorAll(".item")];
+
       function setFilter(tag) {
         chips.forEach((c) =>
           c.setAttribute("aria-pressed", String(c.dataset.filter === tag)),
         );
-        let visible = 0;
-        items.forEach((it) => {
+
+        const visible = items.filter((it) => {
           const show =
             tag === "all" || it.dataset.tags.split(/\s+/).includes(tag);
           it.style.display = show ? "grid" : "none";
-          if (show) visible++;
+          return show;
         });
-        document.getElementById("projCount").textContent = visible;
+
+        // always keep featured at top
+        const featured = visible.filter((it) =>
+          it.dataset.tags.split(/\s+/).includes("featured"),
+        );
+        const rest = visible.filter(
+          (it) => !it.dataset.tags.split(/\s+/).includes("featured"),
+        );
+        [...featured, ...rest].forEach((it) => plist.appendChild(it));
+
+        document.getElementById("projCount").textContent = visible.length;
       }
       chips.forEach((ch) =>
         ch.addEventListener("click", () => setFilter(ch.dataset.filter)),
       );
+
+      // sort on initial load
+      setFilter("all");
 
       const themeBtn = document.getElementById("themeToggle");
       const savedTheme = localStorage.getItem("theme");
@@ -1345,7 +1399,6 @@
         );
       });
 
-      // Back to top button logic
       window.onscroll = function () {
         let btn = document.getElementById("backToTopBtn");
         if (
