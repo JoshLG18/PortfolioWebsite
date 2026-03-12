@@ -1,574 +1,1366 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Josh Le Grice - Professional Portfolio</title>
-<meta name="description" content="Projects and skills by Josh Le Grice - Professional portfolio." />
-<meta name="author" content="Josh Le Grice" />
-<link rel="icon" href="images/icon.png" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Josh Le Grice - Professional Portfolio</title>
+    <meta
+      name="description"
+      content="Projects and skills by Josh Le Grice - Professional portfolio."
+    />
+    <meta name="author" content="Josh Le Grice" />
+    <link rel="icon" href="images/icon.png" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-  :root {
-    --bg: #f5f3ef;
-    --bg2: #ede9e3;
-    --card: #ffffff;
-    --ink: #0e1a2b;
-    --muted: #6b7a8d;
-    --border: rgba(14,26,43,.1);
+    <style>
+      :root {
+        --bg: #f5f3ef;
+        --bg2: #ede9e3;
+        --card: #ffffff;
+        --ink: #0e1a2b;
+        --muted: #6b7a8d;
+        --border: rgba(14, 26, 43, 0.1);
 
-    --gold: #b8922a;
-    --gold2: #d4a843;
-    --gold-tint: rgba(184,146,42,.1);
+        --gold: #b8922a;
+        --gold2: #d4a843;
+        --gold-tint: rgba(184, 146, 42, 0.1);
 
-    --navy: #0e1a2b;
+        --navy: #0e1a2b;
 
-    --radius: 4px;
-    --radius-lg: 8px;
-    --shadow-sm: 0 1px 4px rgba(14,26,43,.07);
-    --shadow: 0 4px 24px rgba(14,26,43,.09);
+        --radius: 4px;
+        --radius-lg: 8px;
+        --shadow-sm: 0 1px 4px rgba(14, 26, 43, 0.07);
+        --shadow: 0 4px 24px rgba(14, 26, 43, 0.09);
 
-    --serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-    --sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    --mono: ui-monospace, Menlo, Consolas, Monaco, monospace;
+        --serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+        --sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --mono: ui-monospace, Menlo, Consolas, Monaco, monospace;
 
-    --chip-bg: #fff;
-    --chip-border: rgba(14,26,43,.12);
-    --tag-bg: rgba(14,26,43,.05);
-  }
+        --chip-bg: #fff;
+        --chip-border: rgba(14, 26, 43, 0.12);
+        --tag-bg: rgba(14, 26, 43, 0.05);
+      }
 
-  body.dark {
-    --bg: #080e18;
-    --bg2: #0d1522;
-    --card: #111b2a;
-    --ink: #e8e2d6;
-    --muted: #7d8fa3;
-    --border: rgba(232,226,214,.1);
-    --shadow-sm: 0 1px 4px rgba(0,0,0,.3);
-    --shadow: 0 4px 24px rgba(0,0,0,.4);
-    --chip-bg: #1a2740;
-    --chip-border: rgba(232,226,214,.12);
-    --tag-bg: rgba(232,226,214,.07);
-  }
+      body.dark {
+        --bg: #080e18;
+        --bg2: #0d1522;
+        --card: #111b2a;
+        --ink: #e8e2d6;
+        --muted: #7d8fa3;
+        --border: rgba(232, 226, 214, 0.1);
+        --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3);
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        --chip-bg: #1a2740;
+        --chip-border: rgba(232, 226, 214, 0.12);
+        --tag-bg: rgba(232, 226, 214, 0.07);
+      }
 
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 400;
-    line-height: 1.6;
-    transition: background .3s, color .3s;
-  }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 400;
+        line-height: 1.6;
+        transition:
+          background 0.3s,
+          color 0.3s;
+      }
 
-  a { color: var(--gold); text-decoration: none; }
-  a:hover { color: var(--gold2); }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
+      a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+      a:hover {
+        color: var(--gold2);
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
 
-  .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 20px 80px;
+      }
 
-  /* Header */
-  header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 32px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-  }
-  .brand { display: flex; align-items: center; gap: 14px; }
-  .logo {
-    width: 38px; height: 38px;
-    border: 1.5px solid var(--gold);
-    display: grid; place-items: center;
-    color: var(--gold);
-    font-family: var(--serif);
-    font-size: 12px;
-    letter-spacing: .02em;
-    flex-shrink: 0;
-  }
-  .brand-name { font-family: var(--serif); font-size: 17px; color: var(--ink); }
-  .nav-wrapper { display: flex; align-items: center; gap: 24px; }
-  nav a {
-    margin-left: 20px; color: var(--muted);
-    font-size: 12px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase;
-    transition: color .15s;
-  }
-  nav a:hover { color: var(--gold); }
-  .theme-btn {
-    background: none; border: none; cursor: pointer; color: var(--muted);
-    padding: 6px; display: grid; place-items: center; transition: color .2s;
-  }
-  .theme-btn:hover { color: var(--gold); }
-  .theme-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .moon-icon { display: none; }
-  body.dark .sun-icon { display: none; }
-  body.dark .moon-icon { display: block; }
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo {
+        width: 38px;
+        height: 38px;
+        border: 1.5px solid var(--gold);
+        display: grid;
+        place-items: center;
+        color: var(--gold);
+        font-family: var(--serif);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        flex-shrink: 0;
+      }
+      .brand-name {
+        font-family: var(--serif);
+        font-size: 17px;
+        color: var(--ink);
+      }
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      nav a {
+        margin-left: 20px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        transition: color 0.15s;
+      }
+      nav a:hover {
+        color: var(--gold);
+      }
+      .theme-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--muted);
+        padding: 6px;
+        display: grid;
+        place-items: center;
+        transition: color 0.2s;
+      }
+      .theme-btn:hover {
+        color: var(--gold);
+      }
+      .theme-btn svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .moon-icon {
+        display: none;
+      }
+      body.dark .sun-icon {
+        display: none;
+      }
+      body.dark .moon-icon {
+        display: block;
+      }
 
-  /* Section rule */
-  .rule { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; }
-  .rule::before, .rule::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .rule-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+      /* Section rule */
+      .rule {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 22px;
+      }
+      .rule::before,
+      .rule::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+      .rule-diamond {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        transform: rotate(45deg);
+        flex-shrink: 0;
+      }
 
-  /* Hero */
-  .hero { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start; margin-bottom: 52px; }
-  @media (max-width: 600px) { .hero { grid-template-columns: 1fr; } }
-  .hero-photo { width: 148px; height: 148px; border-radius: 2px; object-fit: cover; border: 1px solid var(--border); box-shadow: var(--shadow); }
-  @media (max-width: 600px) { .hero-photo { width: 90px; height: 90px; } }
-  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0 0 8px; }
-  h1 { font-family: var(--serif); font-size: clamp(30px, 5vw, 50px); font-weight: 400; line-height: 1.1; margin: 0 0 12px; color: var(--ink); }
-  .hero-sub { color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0 0 20px; max-width: 560px; }
-  .cta { display: flex; gap: 10px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 9px 18px; font-size: 13px; font-weight: 500; letter-spacing: .04em;
-    border-radius: var(--radius); text-decoration: none; cursor: pointer;
-    transition: transform .1s, box-shadow .15s; border: none;
-  }
-  .btn:hover { transform: translateY(-1px); }
-  .btn.primary { background: var(--navy); color: #fff; border: 1px solid var(--navy); }
-  body.dark .btn.primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-  .btn.cv { background: var(--gold); color: #fff; font-weight: 600; }
-  .btn.cv:hover { background: var(--gold2); }
-  .btn.secondary { background: transparent; color: var(--ink); border: 1px solid var(--border); }
-  .btn.secondary:hover { border-color: var(--gold); color: var(--gold); }
-  .statbar { display: flex; gap: 28px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
-  .stat .k { font-family: var(--serif); font-size: 24px; line-height: 1; color: var(--ink); }
-  .stat .t { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 32px;
+        align-items: start;
+        margin-bottom: 52px;
+      }
+      @media (max-width: 600px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hero-photo {
+        width: 148px;
+        height: 148px;
+        border-radius: 2px;
+        object-fit: cover;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+      @media (max-width: 600px) {
+        .hero-photo {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      .hero-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 0 0 8px;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: clamp(30px, 5vw, 50px);
+        font-weight: 400;
+        line-height: 1.1;
+        margin: 0 0 12px;
+        color: var(--ink);
+      }
+      .hero-sub {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+        margin: 0 0 20px;
+        max-width: 560px;
+      }
+      .cta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 18px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        border-radius: var(--radius);
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.1s,
+          box-shadow 0.15s;
+        border: none;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn.primary {
+        background: var(--navy);
+        color: #fff;
+        border: 1px solid var(--navy);
+      }
+      body.dark .btn.primary {
+        background: var(--gold);
+        color: var(--navy);
+        border-color: var(--gold);
+      }
+      .btn.cv {
+        background: var(--gold);
+        color: #fff;
+        font-weight: 600;
+      }
+      .btn.cv:hover {
+        background: var(--gold2);
+      }
+      .btn.secondary {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid var(--border);
+      }
+      .btn.secondary:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .statbar {
+        display: flex;
+        gap: 28px;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+      .stat .k {
+        font-family: var(--serif);
+        font-size: 24px;
+        line-height: 1;
+        color: var(--ink);
+      }
+      .stat .t {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 2px;
+      }
 
-  /* Sections */
-  section { margin-top: 52px; scroll-margin-top: 20px; }
-  .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; gap: 10px; }
-  .section-head h2 { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 400; margin: 0; color: var(--ink); }
-  .section-meta { font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+      /* Sections */
+      section {
+        margin-top: 52px;
+        scroll-margin-top: 20px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 6px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .section-head h2 {
+        font-family: var(--serif);
+        font-size: clamp(22px, 3vw, 30px);
+        font-weight: 400;
+        margin: 0;
+        color: var(--ink);
+      }
+      .section-meta {
+        font-size: 11px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
 
-  /* Skills */
-  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  @media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr; } }
-  .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; box-shadow: var(--shadow-sm); }
-  .skill-card.wide { grid-column: 1 / -1; border-color: rgba(184,146,42,.5); }
-  .skill-card h3 { margin: 0 0 10px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); }
-  .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
-  .pill {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 4px 11px; border-radius: 2px; font-size: 13px; font-weight: 400;
-    border: 1px solid var(--border); background: var(--tag-bg); color: var(--ink);
-  }
-  .pill.core { border-color: rgba(184,146,42,.4); background: var(--gold-tint); font-weight: 500; }
-  .pill .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-  .dot.expert    { background: #22a861; }
-  .dot.proficient{ background: var(--gold); }
-  .dot.familiar  { background: #94a3b8; }
-  .legend { display: flex; gap: 18px; margin-bottom: 12px; flex-wrap: wrap; }
-  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
-  .legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+      /* Skills */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      @media (max-width: 640px) {
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .skill-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 16px 18px;
+        box-shadow: var(--shadow-sm);
+      }
+      .skill-card.wide {
+        grid-column: 1 / -1;
+        border-color: rgba(184, 146, 42, 0.5);
+      }
+      .skill-card h3 {
+        margin: 0 0 10px;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+      }
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 11px;
+        border-radius: 2px;
+        font-size: 13px;
+        font-weight: 400;
+        border: 1px solid var(--border);
+        background: var(--tag-bg);
+        color: var(--ink);
+      }
+      .pill.core {
+        border-color: rgba(184, 146, 42, 0.4);
+        background: var(--gold-tint);
+        font-weight: 500;
+      }
+      .pill .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .dot.expert {
+        background: #22a861;
+      }
+      .dot.proficient {
+        background: var(--gold);
+      }
+      .dot.familiar {
+        background: #94a3b8;
+      }
+      .legend {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .legend-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
 
-  /* Filters */
-  .filters { display: flex; flex-wrap: wrap; gap: 7px; }
-  .chip {
-    padding: 5px 13px; border-radius: 2px;
-    border: 1px solid var(--chip-border); background: var(--chip-bg);
-    color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 500;
-    letter-spacing: .04em; transition: border-color .15s, color .15s;
-  }
-  .chip:hover { border-color: var(--gold); color: var(--gold); }
-  .chip[aria-pressed="true"] { border-color: var(--gold); background: var(--gold-tint); color: var(--gold); }
+      /* Filters */
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .chip {
+        padding: 5px 13px;
+        border-radius: 2px;
+        border: 1px solid var(--chip-border);
+        background: var(--chip-bg);
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        transition:
+          border-color 0.15s,
+          color 0.15s;
+      }
+      .chip:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .chip[aria-pressed="true"] {
+        border-color: var(--gold);
+        background: var(--gold-tint);
+        color: var(--gold);
+      }
 
-  /* Project cards */
-  .list { display: grid; gap: 10px; }
-  .item {
-    display: grid; grid-template-columns: 240px 1fr;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
-    transition: box-shadow .2s, border-color .2s;
-  }
-  .item:hover { box-shadow: var(--shadow); border-color: rgba(184,146,42,.3); }
-  .item.featured { border-left: 3px solid var(--gold); }
-  @media (max-width: 840px) { .item { grid-template-columns: 1fr; } }
-  
-  /* Adjusted thumb styles for consistent, uncropped sizing */
-  .thumb { background: var(--bg2); display: grid; place-items: center; border-right: 1px solid var(--border); overflow: hidden; }
-  .thumb img { width: 100%; height: 100%; object-fit: contain; padding: 16px; aspect-ratio: 4/3; display: block; box-sizing: border-box; }
-  @media (max-width: 840px) { .thumb { border-right: none; border-bottom: 1px solid var(--border); } .thumb img { aspect-ratio: 16/9; } }
-  
-  .pad { padding: 18px 20px; }
-  .item-title { font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--ink); line-height: 1.3; }
-  .item-desc { color: var(--muted); font-size: 14px; margin: 7px 0 0; line-height: 1.65; }
-  .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
-  .tag { font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 2px; background: var(--tag-bg); color: var(--muted); border: 1px solid var(--border); }
-  .view { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; letter-spacing: .02em; margin-top: 12px; color: var(--gold); transition: gap .15s; }
-  .view:hover { gap: 9px; color: var(--gold2); }
-  .view.na { color: var(--muted); cursor: default; pointer-events: none; }
+      /* Project cards */
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+      .item {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition:
+          box-shadow 0.2s,
+          border-color 0.2s;
+      }
+      .item:hover {
+        box-shadow: var(--shadow);
+        border-color: rgba(184, 146, 42, 0.3);
+      }
+      .item.featured {
+        border-left: 3px solid var(--gold);
+      }
+      @media (max-width: 840px) {
+        .item {
+          grid-template-columns: 1fr;
+        }
+      }
 
-  .badge-featured {
-    display: inline-block; font-family: var(--sans); font-size: 9px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: .1em; padding: 2px 7px;
-    border-radius: 2px; background: var(--gold); color: #fff;
-    margin-left: 10px; vertical-align: middle; position: relative; top: -2px;
-  }
+      /* Adjusted thumb styles for consistent, uncropped sizing */
+      .thumb {
+        background: var(--bg2);
+        display: grid;
+        place-items: center;
+        border-right: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 16px;
+        aspect-ratio: 4/3;
+        display: block;
+        box-sizing: border-box;
+      }
+      @media (max-width: 840px) {
+        .thumb {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+        .thumb img {
+          aspect-ratio: 16/9;
+        }
+      }
 
-  /* Cert */
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); }
-  .card a { text-decoration: underline; }
+      .pad {
+        padding: 18px 20px;
+      }
+      .item-title {
+        font-family: var(--serif);
+        font-size: 17px;
+        font-weight: 400;
+        color: var(--ink);
+        line-height: 1.3;
+      }
+      .item-desc {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 7px 0 0;
+        line-height: 1.65;
+      }
+      .tags {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .tag {
+        font-family: var(--mono);
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 2px;
+        background: var(--tag-bg);
+        color: var(--muted);
+        border: 1px solid var(--border);
+      }
+      .view {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        margin-top: 12px;
+        color: var(--gold);
+        transition: gap 0.15s;
+      }
+      .view:hover {
+        gap: 9px;
+        color: var(--gold2);
+      }
+      .view.na {
+        color: var(--muted);
+        cursor: default;
+        pointer-events: none;
+      }
 
-  /* Contact */
-  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; box-shadow: var(--shadow-sm); transition: border-color .15s; }
-  .contact-item:hover { border-color: var(--gold); }
-  .contact-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 6px; }
-  .contact-value { font-size: 13px; color: var(--ink); word-break: break-all; }
-  .contact-value a { color: var(--ink); }
-  .contact-value a:hover { color: var(--gold); }
+      .badge-featured {
+        display: inline-block;
+        font-family: var(--sans);
+        font-size: 9px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 2px 7px;
+        border-radius: 2px;
+        background: var(--gold);
+        color: #fff;
+        margin-left: 10px;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+      }
 
-  /* Footer & Back to top */
-  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 12px; letter-spacing: .03em; }
-  .footer-mark { color: var(--gold); font-family: var(--serif); font-size: 15px; }
+      /* Cert */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+      }
+      .card a {
+        text-decoration: underline;
+      }
 
-  #backToTopBtn {
-    display: none; position: fixed; bottom: 24px; right: 24px; z-index: 99;
-    font-size: 13px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
-    border: none; outline: none; background-color: var(--navy); color: #fff;
-    cursor: pointer; padding: 10px 16px; border-radius: 4px; box-shadow: var(--shadow);
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  #backToTopBtn:hover { background-color: var(--gold); transform: translateY(-2px); }
-  body.dark #backToTopBtn { background-color: var(--gold); color: var(--navy); }
-  body.dark #backToTopBtn:hover { background-color: var(--gold2); }
+      /* Contact */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      @media (max-width: 640px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 16px 18px;
+        box-shadow: var(--shadow-sm);
+        transition: border-color 0.15s;
+      }
+      .contact-item:hover {
+        border-color: var(--gold);
+      }
+      .contact-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .contact-value {
+        font-size: 13px;
+        color: var(--ink);
+        word-break: break-all;
+      }
+      .contact-value a {
+        color: var(--ink);
+      }
+      .contact-value a:hover {
+        color: var(--gold);
+      }
 
-  /* Animations */
-  @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
-  .hero     { animation: fadeUp .45s ease both; }
-  #skills   { animation: fadeUp .45s .08s ease both; }
-  #projects { animation: fadeUp .45s .14s ease both; }
-</style>
-</head>
-<body>
-<div class="container">
+      /* Footer & Back to top */
+      footer {
+        margin-top: 56px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.03em;
+      }
+      .footer-mark {
+        color: var(--gold);
+        font-family: var(--serif);
+        font-size: 15px;
+      }
 
-  <header>
-    <div class="brand">
-      <div class="logo">JLG</div>
-      <span class="brand-name">Josh Le Grice</span>
-    </div>
-    <div class="nav-wrapper">
-      <nav aria-label="Primary">
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      #backToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 99;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        background-color: var(--navy);
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 16px;
+        border-radius: 4px;
+        box-shadow: var(--shadow);
+        transition:
+          background-color 0.2s,
+          transform 0.2s;
+      }
+      #backToTopBtn:hover {
+        background-color: var(--gold);
+        transform: translateY(-2px);
+      }
+      body.dark #backToTopBtn {
+        background-color: var(--gold);
+        color: var(--navy);
+      }
+      body.dark #backToTopBtn:hover {
+        background-color: var(--gold2);
+      }
+
+      /* Animations */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero {
+        animation: fadeUp 0.45s ease both;
+      }
+      #skills {
+        animation: fadeUp 0.45s 0.08s ease both;
+      }
+      #projects {
+        animation: fadeUp 0.45s 0.14s ease both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="logo">JLG</div>
+          <span class="brand-name">Josh Le Grice</span>
+        </div>
+        <div class="nav-wrapper">
+          <nav aria-label="Primary">
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <button
+            class="theme-btn"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+          >
+            <svg class="sun-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="hero">
+        <img class="hero-photo" src="images/profile.jpeg" alt="Josh Le Grice" />
+        <div>
+          <p class="hero-eyebrow">MSc Data Science · University of Exeter</p>
+          <h1>Josh Le Grice</h1>
+          <p class="hero-sub">
+            Quantitative developer and data scientist with a focus on machine
+            learning, deep learning, and financial modelling.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View projects</a>
+            <a
+              class="btn cv"
+              href="attachments/LeGriceJoshCV.pdf"
+              target="_blank"
+              rel="noopener"
+              >↓ Download CV</a
+            >
+            <a class="btn secondary" href="mailto:joshualegrice@gmail.com"
+              >Email me</a
+            >
+          </div>
+          <div class="statbar">
+            <div class="stat">
+              <div class="k" id="projCount">9</div>
+              <div class="t">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="k">3</div>
+              <div class="t">Featured</div>
+            </div>
+            <div class="stat">
+              <div class="k">1</div>
+              <div class="t">Internship</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="skills">
+        <div class="section-head">
+          <h2>Technical Skills</h2>
+          <span class="section-meta">Tools I use regularly</span>
+        </div>
+        <div class="rule"><div class="rule-diamond"></div></div>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-dot dot expert"></div>
+            Expert
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot dot proficient"></div>
+            Proficient
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot dot familiar"></div>
+            Familiar
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card wide">
+            <h3>Core Languages</h3>
+            <div class="pill-list">
+              <span class="pill core"
+                ><span class="dot expert"></span>Python</span
+              >
+              <span class="pill core"><span class="dot expert"></span>SQL</span>
+              <span class="pill core"
+                ><span class="dot proficient"></span>C++</span
+              >
+              <span class="pill"><span class="dot proficient"></span>R</span>
+              <span class="pill"
+                ><span class="dot proficient"></span>JavaScript</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>React</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Node.js</span
+              >
+              <span class="pill"><span class="dot familiar"></span>Bash</span>
+              <span class="pill"><span class="dot familiar"></span>HTML</span>
+              <span class="pill"><span class="dot familiar"></span>LaTeX</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Machine Learning &amp; Deep Learning</h3>
+            <div class="pill-list">
+              <span class="pill"
+                ><span class="dot expert"></span>Scikit-learn</span
+              >
+              <span class="pill"><span class="dot expert"></span>PyTorch</span>
+              <span class="pill"
+                ><span class="dot proficient"></span>Transformers (HF)</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>NumPy</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>XGBoost</span
+              >
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Quantitative &amp; Finance</h3>
+            <div class="pill-list">
+              <span class="pill"
+                ><span class="dot proficient"></span>Statistical Modelling</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Time Series Analysis</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Credit Risk Modelling</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Financial NLP</span
+              >
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Data Engineering</h3>
+            <div class="pill-list">
+              <span class="pill"><span class="dot expert"></span>Pandas</span>
+              <span class="pill"
+                ><span class="dot proficient"></span>Apache Spark</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>REST APIs</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>FastAPI</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>ETL Pipelines</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Express.js</span
+              >
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Cloud &amp; DevOps</h3>
+            <div class="pill-list">
+              <span class="pill core"><span class="dot expert"></span>Git</span>
+              <span class="pill"
+                ><span class="dot proficient"></span>Azure SQL</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Databricks</span
+              >
+              <span class="pill"
+                ><span class="dot familiar"></span>Azure Cloud</span
+              >
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Visualisation &amp; Reporting</h3>
+            <div class="pill-list">
+              <span class="pill"
+                ><span class="dot expert"></span>Matplotlib / Seaborn</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Power BI</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Quarto</span
+              >
+              <span class="pill"
+                ><span class="dot proficient"></span>Streamlit</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="chip" data-filter="all" aria-pressed="true">
+              All
+            </button>
+            <button class="chip" data-filter="featured">Featured</button>
+            <button class="chip" data-filter="ml-ai">ML &amp; AI</button>
+            <button class="chip" data-filter="data-eng">
+              Data Engineering
+            </button>
+            <button class="chip" data-filter="viz-app">Apps &amp; Vis</button>
+            <button class="chip" data-filter="research">Research</button>
+          </div>
+        </div>
+        <div class="rule"><div class="rule-diamond"></div></div>
+
+        <div class="list" id="plist">
+          <article class="item featured" data-tags="featured ml-ai viz-app">
+            <div class="thumb">
+              <img src="images/llm.png" alt="Portfolio LLM" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Portfolio LLM <span class="badge-featured">Featured</span>
+              </div>
+              <p class="item-desc">
+                Interactive RAG application that indexes my CV and projects for
+                semantic retrieval. Deployed live on Streamlit Cloud - try
+                asking it about any of my experience.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">LLM</span
+                ><span class="tag">RAG</span><span class="tag">Streamlit</span>
+              </div>
+              <a
+                class="view"
+                href="https://portfoliollm.streamlit.app/"
+                target="_blank"
+                rel="noopener"
+                >Open app →</a
+              >
+            </div>
+          </article>
+
+          <article class="item featured" data-tags="featured ml-ai research">
+            <div class="thumb">
+              <img src="images/FinNews.png" alt="Sentiment Analysis" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Neural Architecture Benchmarking for Financial Sentiment
+                Analysis <span class="badge-featured">Featured</span>
+              </div>
+              <p class="item-desc">
+                Benchmarked MLP, LSTM, and Transformer architectures on
+                financial news sentiment classification. Transformer models
+                delivered the highest performance with 90.3% Accuracy, 0.876 F1
+                Score, and 0.969 ROC-AUC, outperforming RNN baselines across all
+                metrics.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">PyTorch</span
+                ><span class="tag">NLP</span
+                ><span class="tag">Deep Learning</span>
+              </div>
+              <a
+                class="view"
+                href="attachments/Report.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read report →</a
+              >
+            </div>
+          </article>
+
+          <article class="item featured" data-tags="featured data-eng viz-app">
+            <div class="thumb">
+              <img src="images/agriculture.png" alt="Agriculture DB" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Cloud-Hosted Agriculture Database Management System
+                <span class="badge-featured">Featured</span>
+              </div>
+              <p class="item-desc">
+                Engineered a normalised (3NF) relational database on Azure SQL
+                to analyse UK agricultural sustainability. Built automated
+                Python ingestion pipelines and a Node.js REST API layer.
+              </p>
+              <div class="tags">
+                <span class="tag">Azure SQL</span><span class="tag">Python</span
+                ><span class="tag">Node.js</span
+                ><span class="tag">REST API</span>
+              </div>
+              <a
+                class="view"
+                href="https://joshlg18.github.io/Agricultural-Database/"
+                target="_blank"
+                rel="noopener"
+                >View implementation →</a
+              >
+            </div>
+          </article>
+
+          <article class="item" data-tags="ml-ai viz-app">
+            <div class="thumb">
+              <img src="images/CreditCards.png" alt="Credit Risk" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Predicting Loan Defaults: Credit Risk Analysis
+              </div>
+              <p class="item-desc">
+                End-to-end credit risk pipeline on real-world loan data.
+                Compared Logistic Regression, Random Forest, and XGBoost;
+                addressed multicollinearity and class imbalance. XGBoost
+                achieved the best results with 92.8% Accuracy, 0.944 AUC, and
+                0.816 F1-score.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">XGBoost</span
+                ><span class="tag">Scikit-learn</span>
+              </div>
+              <a
+                class="view"
+                href="https://joshlg18.quarto.pub/predicting-loan-defaults-a-data-driven-approach-to-credit-risk-analysis/"
+                target="_blank"
+                rel="noopener"
+                >Read report →</a
+              >
+            </div>
+          </article>
+
+          <article class="item" data-tags="ml-ai research">
+            <div class="thumb">
+              <img src="images/MLP.png" alt="MLP from scratch" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Multi-Layer Perceptron for Image Classification
+              </div>
+              <p class="item-desc">
+                Implemented a full MLP in NumPy - forward pass, backpropagation,
+                weight updates - achieving ~89% accuracy on Fashion MNIST, on
+                par with a reference PyTorch implementation.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">NumPy</span
+                ><span class="tag">Deep Learning</span>
+              </div>
+              <a
+                class="view"
+                href="https://github.com/JoshLG18/Multi-Layer-Perceptron"
+                target="_blank"
+                rel="noopener"
+                >GitHub →</a
+              >
+            </div>
+          </article>
+
+          <article class="item" data-tags="ml-ai research">
+            <div class="thumb">
+              <img src="images/DiabetesPred.png" alt="Diabetes prediction" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Predicting Diabetes: Key Factors &amp; Model Benchmarking
+              </div>
+              <p class="item-desc">
+                Identified top clinical predictors of diabetes diagnosis and
+                benchmarked classification models. Logistic Regression yielded
+                the highest accuracy at 77.3%, while SVM achieved the highest
+                AUC at 0.850. Includes feature importance analysis and model
+                interpretability.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">ML</span
+                ><span class="tag">Research</span>
+              </div>
+              <a
+                class="view"
+                href="attachments/Coursework.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read report →</a
+              >
+            </div>
+          </article>
+
+          <article class="item" data-tags="viz-app">
+            <div class="thumb">
+              <img src="images/app.png" alt="KPI Dashboard" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Commercial KPI Dashboard - Ekimetrics Internship
+              </div>
+              <p class="item-desc">
+                Semi-automated reporting pipeline built during internship at
+                Ekimetrics: raw data ingestion and cleaning through to
+                interactive Power BI dashboards for commercial KPI tracking.
+              </p>
+              <div class="tags">
+                <span class="tag">Power BI</span><span class="tag">Python</span
+                ><span class="tag">Data Pipeline</span>
+              </div>
+              <span class="view na">Proprietary - not publicly accessible</span>
+            </div>
+          </article>
+
+          <article class="item" data-tags="ml-ai research">
+            <div class="thumb">
+              <img src="images/diss.png" alt="Dissertation" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                ML &amp; Type 1 Diabetes: A Critical Analysis
+              </div>
+              <p class="item-desc">
+                Third-year dissertation evaluating machine learning applications
+                in T1D: glucose forecasting models, diagnostic tools, and
+                closed-loop insulin delivery systems. Highlights include XGBoost
+                achieving 0.99 AUC for hypoglycaemia prediction and dual-hormone
+                systems reaching 93.1% Time in Range (TIR).
+              </p>
+              <div class="tags">
+                <span class="tag">Research</span><span class="tag">ML</span>
+              </div>
+              <a
+                class="view"
+                href="attachments/Dissertation.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read report →</a
+              >
+            </div>
+          </article>
+
+          <article class="item" data-tags="research">
+            <div class="thumb">
+              <img src="images/Ethics.png" alt="Ethics Report" />
+            </div>
+            <div class="pad">
+              <div class="item-title">
+                Ethical Considerations in Automated Insulin Delivery
+              </div>
+              <p class="item-desc">
+                Evaluated the Diabeloop DBLG1 AI-driven diabetes management
+                system. Analyzed algorithmic bias, transparency, and fairness
+                through utilitarian and principlism frameworks, proposing
+                collaborative governance strategies.
+              </p>
+              <div class="tags">
+                <span class="tag">Research</span
+                ><span class="tag">AI Ethics</span>
+              </div>
+              <a
+                class="view"
+                href="attachments/EthicsReport.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read report →</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="section-head">
+          <h2>Certifications</h2>
+          <span class="section-meta">Verified credentials</span>
+        </div>
+        <div class="rule"><div class="rule-diamond"></div></div>
+        <div
+          class="card"
+          style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap"
+        >
+          <img
+            src="images/cert.png"
+            alt="IBM Data Science Certificate"
+            style="
+              width: 110px;
+              height: auto;
+              border-radius: 4px;
+              border: 1px solid var(--border);
+            "
+          />
+          <div>
+            <strong
+              style="
+                font-family: var(--serif);
+                font-size: 17px;
+                font-weight: 400;
+              "
+              >IBM Data Science Professional Certificate</strong
+            >
+            <p class="item-desc" style="margin: 7px 0 0">
+              12-module certification covering Python, SQL, data visualisation,
+              machine learning, and applied data science. Verified by IBM via
+              Coursera.
+            </p>
+            <a
+              class="view"
+              href="attachments/IBM Data Science Proffesional Certificate.pdf"
+              target="_blank"
+              rel="noopener"
+              >View certificate →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <span class="section-meta">Let's work together</span>
+        </div>
+        <div class="rule"><div class="rule-diamond"></div></div>
+        <p style="color: var(--muted); font-size: 14px; margin: 0 0 14px">
+          Email is the fastest way to reach me.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:joshualegrice@gmail.com"
+                >joshualegrice@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">
+              <a
+                href="https://github.com/JoshLG18"
+                target="_blank"
+                rel="noopener"
+                >github.com/JoshLG18</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">
+              <a
+                href="https://www.linkedin.com/in/josh-le-grice-aa0223261/"
+                target="_blank"
+                rel="noopener"
+                >linkedin.com/in/josh-le-grice</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>© <span id="year"></span> Josh Le Grice</span>
+        <span class="footer-mark">JLG</span>
+        <span>Built with HTML / CSS / JS</span>
+      </footer>
+
+      <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+        ↑ Top
       </button>
     </div>
-  </header>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-  <div class="hero">
-    <img class="hero-photo" src="images/profile.jpeg" alt="Josh Le Grice">
-    <div>
-      <p class="hero-eyebrow">MSc Data Science · University of Exeter</p>
-      <h1>Josh Le Grice</h1>
-      <p class="hero-sub">Quantitative developer and data scientist with a focus on machine learning, deep learning, and financial modelling.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">View projects</a>
-        <a class="btn cv" href="attachments/LeGriceJoshCV.pdf" target="_blank" rel="noopener">↓ Download CV</a>
-        <a class="btn secondary" href="mailto:joshualegrice@gmail.com">Email me</a>
-      </div>
-      <div class="statbar">
-        <div class="stat"><div class="k" id="projCount">9</div><div class="t">Projects</div></div>
-        <div class="stat"><div class="k">3</div><div class="t">Featured</div></div>
-        <div class="stat"><div class="k">1</div><div class="t">Internship</div></div>
-      </div>
-    </div>
-  </div>
+      const chips = [...document.querySelectorAll(".chip")];
+      const items = [...document.querySelectorAll(".item")];
+      function setFilter(tag) {
+        chips.forEach((c) =>
+          c.setAttribute("aria-pressed", String(c.dataset.filter === tag)),
+        );
+        let visible = 0;
+        items.forEach((it) => {
+          const show =
+            tag === "all" || it.dataset.tags.split(/\s+/).includes(tag);
+          it.style.display = show ? "grid" : "none";
+          if (show) visible++;
+        });
+        document.getElementById("projCount").textContent = visible;
+      }
+      chips.forEach((ch) =>
+        ch.addEventListener("click", () => setFilter(ch.dataset.filter)),
+      );
 
-  <section id="skills">
-    <div class="section-head">
-      <h2>Technical Skills</h2>
-      <span class="section-meta">Tools I use regularly</span>
-    </div>
-    <div class="rule"><div class="rule-diamond"></div></div>
+      const themeBtn = document.getElementById("themeToggle");
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark))
+        document.body.classList.add("dark");
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        );
+      });
 
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot dot expert"></div>Expert</div>
-      <div class="legend-item"><div class="legend-dot dot proficient"></div>Proficient</div>
-      <div class="legend-item"><div class="legend-dot dot familiar"></div>Familiar</div>
-    </div>
+      // Back to top button logic
+      window.onscroll = function () {
+        let btn = document.getElementById("backToTopBtn");
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
 
-    <div class="skills-grid">
-      <div class="skill-card wide">
-        <h3>Core Languages</h3>
-        <div class="pill-list">
-          <span class="pill core"><span class="dot expert"></span>Python</span>
-          <span class="pill core"><span class="dot expert"></span>SQL</span>
-          <span class="pill core"><span class="dot proficient"></span>C++</span>
-          <span class="pill"><span class="dot proficient"></span>R</span>
-          <span class="pill"><span class="dot proficient"></span>JavaScript</span>
-          <span class="pill"><span class="dot proficient"></span>React</span>
-          <span class="pill"><span class="dot proficient"></span>Node.js</span>
-          <span class="pill"><span class="dot familiar"></span>Bash</span>
-          <span class="pill"><span class="dot familiar"></span>HTML</span>
-          <span class="pill"><span class="dot familiar"></span>LaTeX</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Machine Learning &amp; Deep Learning</h3>
-        <div class="pill-list">
-          <span class="pill"><span class="dot expert"></span>Scikit-learn</span>
-          <span class="pill"><span class="dot expert"></span>PyTorch</span>
-          <span class="pill"><span class="dot proficient"></span>Transformers (HF)</span>
-          <span class="pill"><span class="dot proficient"></span>NumPy</span>
-          <span class="pill"><span class="dot proficient"></span>XGBoost</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Quantitative &amp; Finance</h3>
-        <div class="pill-list">
-          <span class="pill"><span class="dot proficient"></span>Statistical Modelling</span>
-          <span class="pill"><span class="dot proficient"></span>Time Series Analysis</span>
-          <span class="pill"><span class="dot proficient"></span>Credit Risk Modelling</span>
-          <span class="pill"><span class="dot proficient"></span>Financial NLP</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Data Engineering</h3>
-        <div class="pill-list">
-          <span class="pill"><span class="dot expert"></span>Pandas</span>
-          <span class="pill"><span class="dot proficient"></span>Apache Spark</span>
-          <span class="pill"><span class="dot proficient"></span>REST APIs</span>
-          <span class="pill"><span class="dot proficient"></span>FastAPI</span>
-          <span class="pill"><span class="dot proficient"></span>ETL Pipelines</span>
-          <span class="pill"><span class="dot proficient"></span>Express.js</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Cloud &amp; DevOps</h3>
-        <div class="pill-list">
-          <span class="pill core"><span class="dot expert"></span>Git</span>
-          <span class="pill"><span class="dot proficient"></span>Azure SQL</span>
-          <span class="pill"><span class="dot proficient"></span>Databricks</span>
-          <span class="pill"><span class="dot familiar"></span>Azure Cloud</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Visualisation &amp; Reporting</h3>
-        <div class="pill-list">
-          <span class="pill"><span class="dot expert"></span>Matplotlib / Seaborn</span>
-          <span class="pill"><span class="dot proficient"></span>Power BI</span>
-          <span class="pill"><span class="dot proficient"></span>Quarto</span>
-          <span class="pill"><span class="dot proficient"></span>Streamlit</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="section-head">
-      <h2>Featured Projects</h2>
-      <div class="filters" role="group" aria-label="Filter projects">
-        <button class="chip" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="featured">Featured</button>
-        <button class="chip" data-filter="ml-ai">ML &amp; AI</button>
-        <button class="chip" data-filter="data-eng">Data Engineering</button>
-        <button class="chip" data-filter="viz-app">Apps &amp; Vis</button>
-        <button class="chip" data-filter="research">Research</button>
-      </div>
-    </div>
-    <div class="rule"><div class="rule-diamond"></div></div>
-
-    <div class="list" id="plist">
-
-      <article class="item featured" data-tags="featured ml-ai viz-app">
-        <div class="thumb"><img src="images/llm.png" alt="Portfolio LLM"></div>
-        <div class="pad">
-          <div class="item-title">Portfolio LLM <span class="badge-featured">Featured</span></div>
-          <p class="item-desc">Interactive RAG application that indexes my CV and projects for semantic retrieval. Deployed live on Streamlit Cloud - try asking it about any of my experience.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">Streamlit</span></div>
-          <a class="view" href="https://portfoliollm.streamlit.app/" target="_blank" rel="noopener">Open app →</a>
-        </div>
-      </article>
-
-      <article class="item featured" data-tags="featured ml-ai research">
-        <div class="thumb"><img src="images/FinNews.png" alt="Sentiment Analysis"></div>
-        <div class="pad">
-          <div class="item-title">Neural Architecture Benchmarking for Financial Sentiment Analysis <span class="badge-featured">Featured</span></div>
-          <p class="item-desc">Benchmarked MLP, LSTM, and Transformer architectures on financial news sentiment classification. Transformer models delivered the highest performance with 90.3% Accuracy, 0.876 F1 Score, and 0.969 ROC-AUC, outperforming RNN baselines across all metrics.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">NLP</span><span class="tag">Deep Learning</span></div>
-          <a class="view" href="attachments/Report.pdf" target="_blank" rel="noopener">Read report →</a>
-        </div>
-      </article>
-
-      <article class="item featured" data-tags="featured data-eng viz-app">
-        <div class="thumb"><img src="images/agriculture.png" alt="Agriculture DB"></div>
-        <div class="pad">
-          <div class="item-title">Cloud-Hosted Agriculture Database Management System <span class="badge-featured">Featured</span></div>
-          <p class="item-desc">Engineered a normalised (3NF) relational database on Azure SQL to analyse UK agricultural sustainability. Built automated Python ingestion pipelines and a Node.js REST API layer.</p>
-          <div class="tags"><span class="tag">Azure SQL</span><span class="tag">Python</span><span class="tag">Node.js</span><span class="tag">REST API</span></div>
-          <a class="view" href="https://joshlg18.github.io/Agricultural-Database/" target="_blank" rel="noopener">View implementation →</a>
-        </div>
-      </article>
-
-      <article class="item" data-tags="ml-ai viz-app">
-        <div class="thumb"><img src="images/CreditCards.png" alt="Credit Risk"></div>
-        <div class="pad">
-          <div class="item-title">Predicting Loan Defaults: Credit Risk Analysis</div>
-          <p class="item-desc">End-to-end credit risk pipeline on real-world loan data. Compared Logistic Regression, Random Forest, and XGBoost; addressed multicollinearity and class imbalance. XGBoost achieved the best results with 92.8% Accuracy, 0.944 AUC, and 0.816 F1-score.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Scikit-learn</span></div>
-          <a class="view" href="https://joshlg18.quarto.pub/predicting-loan-defaults-a-data-driven-approach-to-credit-risk-analysis/" target="_blank" rel="noopener">Read report →</a>
-        </div>
-      </article>
-
-      <article class="item" data-tags="ml-ai research">
-        <div class="thumb"><img src="images/MLP.png" alt="MLP from scratch"></div>
-        <div class="pad">
-          <div class="item-title">Multi-Layer Perceptron for Image Classification</div>
-          <p class="item-desc">Implemented a full MLP in NumPy - forward pass, backpropagation, weight updates - achieving ~89% accuracy on CIFAR, on par with a reference PyTorch implementation.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Deep Learning</span></div>
-          <a class="view" href="https://github.com/JoshLG18/Multi-Layer-Perceptron" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
-
-      <article class="item" data-tags="ml-ai research">
-        <div class="thumb"><img src="images/DiabetesPred.png" alt="Diabetes prediction"></div>
-        <div class="pad">
-          <div class="item-title">Predicting Diabetes: Key Factors &amp; Model Benchmarking</div>
-          <p class="item-desc">Identified top clinical predictors of diabetes diagnosis and benchmarked classification models. Logistic Regression yielded the highest accuracy at 77.3%, while SVM achieved the highest AUC at 0.850. Includes feature importance analysis and model interpretability.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Research</span></div>
-          <a class="view" href="attachments/Coursework.pdf" target="_blank" rel="noopener">Read report →</a>
-        </div>
-      </article>
-
-      <article class="item" data-tags="viz-app">
-        <div class="thumb"><img src="images/app.png" alt="KPI Dashboard"></div>
-        <div class="pad">
-          <div class="item-title">Commercial KPI Dashboard - Ekimetrics Internship</div>
-          <p class="item-desc">Semi-automated reporting pipeline built during internship at Ekimetrics: raw data ingestion and cleaning through to interactive Power BI dashboards for commercial KPI tracking.</p>
-          <div class="tags"><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">Data Pipeline</span></div>
-          <span class="view na">Proprietary - not publicly accessible</span>
-        </div>
-      </article>
-
-      <article class="item" data-tags="ml-ai research">
-        <div class="thumb"><img src="images/diss.png" alt="Dissertation"></div>
-        <div class="pad">
-          <div class="item-title">ML &amp; Type 1 Diabetes: A Critical Analysis</div>
-          <p class="item-desc">Third-year dissertation evaluating machine learning applications in T1D: glucose forecasting models, diagnostic tools, and closed-loop insulin delivery systems. Highlights include XGBoost achieving 0.99 AUC for hypoglycaemia prediction and dual-hormone systems reaching 93.1% Time in Range (TIR).</p>
-          <div class="tags"><span class="tag">Research</span><span class="tag">ML</span></div>
-          <a class="view" href="attachments/Dissertation.pdf" target="_blank" rel="noopener">Read report →</a>
-        </div>
-      </article>
-
-      <article class="item" data-tags="research">
-        <div class="thumb"><img src="images/Ethics.png" alt="Ethics Report"></div>
-        <div class="pad">
-          <div class="item-title">Ethical Considerations in Automated Insulin Delivery</div>
-          <p class="item-desc">Evaluated the Diabeloop DBLG1 AI-driven diabetes management system. Analyzed algorithmic bias, transparency, and fairness through utilitarian and principlism frameworks, proposing collaborative governance strategies.</p>
-          <div class="tags"><span class="tag">Research</span><span class="tag">AI Ethics</span></div>
-          <a class="view" href="attachments/EthicsReport.pdf" target="_blank" rel="noopener">Read report →</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section id="certifications">
-    <div class="section-head">
-      <h2>Certifications</h2>
-      <span class="section-meta">Verified credentials</span>
-    </div>
-    <div class="rule"><div class="rule-diamond"></div></div>
-    <div class="card" style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
-      <img src="images/cert.png" alt="IBM Data Science Certificate" style="width:110px; height:auto; border-radius:4px; border:1px solid var(--border);">
-      <div>
-        <strong style="font-family:var(--serif); font-size:17px; font-weight:400;">IBM Data Science Professional Certificate</strong>
-        <p class="item-desc" style="margin:7px 0 0;">12-module certification covering Python, SQL, data visualisation, machine learning, and applied data science. Verified by IBM via Coursera.</p>
-        <a class="view" href="attachments/IBM Data Science Proffesional Certificate.pdf" target="_blank" rel="noopener">View certificate →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="section-head">
-      <h2>Contact</h2>
-      <span class="section-meta">Let's work together</span>
-    </div>
-    <div class="rule"><div class="rule-diamond"></div></div>
-    <p style="color:var(--muted); font-size:14px; margin:0 0 14px;"> Email is the fastest way to reach me.</p>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="contact-label">Email</div>
-        <div class="contact-value"><a href="mailto:joshualegrice@gmail.com">joshualegrice@gmail.com</a></div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">GitHub</div>
-        <div class="contact-value"><a href="https://github.com/JoshLG18" target="_blank" rel="noopener">github.com/JoshLG18</a></div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-value"><a href="https://www.linkedin.com/in/josh-le-grice-aa0223261/" target="_blank" rel="noopener">linkedin.com/in/josh-le-grice</a></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span>© <span id="year"></span> Josh Le Grice</span>
-    <span class="footer-mark">JLG</span>
-    <span>Built with HTML / CSS / JS</span>
-  </footer>
-
-  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
-    ↑ Top
-  </button>
-
-</div>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const chips = [...document.querySelectorAll('.chip')];
-  const items = [...document.querySelectorAll('.item')];
-  function setFilter(tag) {
-    chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.filter === tag)));
-    let visible = 0;
-    items.forEach(it => {
-      const show = tag === 'all' || it.dataset.tags.split(/\s+/).includes(tag);
-      it.style.display = show ? 'grid' : 'none';
-      if (show) visible++;
-    });
-    document.getElementById('projCount').textContent = visible;
-  }
-  chips.forEach(ch => ch.addEventListener('click', () => setFilter(ch.dataset.filter)));
-
-  const themeBtn = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) document.body.classList.add('dark');
-  themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-  });
-
-  // Back to top button logic
-  window.onscroll = function () {
-    let btn = document.getElementById("backToTopBtn");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
-
-  function topFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
-</body>
+      function topFunction() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
 </html>
